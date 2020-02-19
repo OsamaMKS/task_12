@@ -54,7 +54,7 @@ def restaurant_list(request):
     restaurants = Restaurant.objects.all()
     query = request.GET.get("q")
     if query:
-        articles = articles.filter(
+        restaurants = restaurants.filter(
             Q(description__icontains=query)|
             Q(name__icontains=query)
             ).distinct()
